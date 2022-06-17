@@ -1,0 +1,63 @@
+﻿@model WebApi.Entities.Course
+
+@{
+    ViewBag.Title = "Create New Course Record";
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_SignInLayout.cshtml";
+    }
+    @if (!User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+
+<div id="createCrsPage">
+
+    <h2>Create New Course Record</h2>
+
+    @using (Html.BeginForm("Create", "Courses", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <hr />
+
+            <div class="form-group">
+                <span class="text-danger">* </span>@Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <span class="text-danger">* </span>@Html.LabelFor(model => model.CreditHours, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CreditHours, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CreditHours, "Credit Hours Must be in Between 2 and 7 Hours", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    }
+    <br />
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+</div>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <script src="~/js/SideMenu.js"></script>
+
+    <script>
+        $(document).ready(link2);
+    </script>
+}

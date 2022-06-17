@@ -1,0 +1,113 @@
+﻿@model WebApi.Entities.Student
+
+@{
+    ViewBag.Title = "Create New Student Record";
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_SignInLayout.cshtml";
+    }
+    @if (!User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+
+<div id="createStuPage">
+
+    <h2>Create New Student Record</h2>
+
+    @using (Html.BeginForm("Create", "Students", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <hr />
+
+            <div class="form-group">
+                <span class="text-danger">* </span>@Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <span class="text-danger">* </span>@Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <span class="text-danger">* </span>@Html.LabelFor(model => model.BirthDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <span class="text-danger">* </span>@Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.RadioButtonFor(model => model.Gender, "Female", htmlAttributes: new { @class = "form-check-input", @Name = "studentGender", @checked = true }) Female
+                    <br />
+                    @Html.RadioButtonFor(model => model.Gender, "Male", htmlAttributes: new { @class = "form-check-input", @Name = "studentGender" }) Male
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <span class="text-danger">* </span>@Html.LabelFor(model => model.EnrollmentDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.EnrollmentDate, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <span class="text-danger">* </span>@Html.LabelFor(model => model.Major, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.Major, new List<SelectListItem>
+               {
+                    new SelectListItem{Text="Computer Science", Value="Computer Science"},
+                    new SelectListItem{Text="Software Engineering", Value="Software Engineering"},
+                    new SelectListItem{Text="Artificial Intelligence", Value="Artificial Intelligence"}
+               }, htmlAttributes: new { @class = "form-select form-select-md-2" })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <span class="text-danger">* </span>@Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.Status, new List<SelectListItem>
+               {
+                    new SelectListItem{Text="Active", Value="Active"},
+                    new SelectListItem{Text="Inactive", Value="Inactive"},
+               }, htmlAttributes: new { @class = "form-select form-select-md-2" })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <span class="text-danger">* </span>@Html.LabelFor(model => model.GPA, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.GPA, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.GPA, "GPA Must be in Between 2 and 5", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    }
+    <br />
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+</div>
+
+<script src="~/js/SideMenu.js"></script>
+
+<script>
+    $(document).ready(link3);
+</script>

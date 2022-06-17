@@ -1,0 +1,65 @@
+﻿
+
+@model IEnumerable<WebApi.Entities.Teacher>
+
+@{
+    ViewBag.Title = "Teachers";
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_SignInLayout.cshtml";
+    }
+    @if (!User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+<div id="teachersPage">
+
+    <h2>Teachers</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+    <table id="TeachersTable" width="100%">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BirthDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Department)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Salary)
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+    </table>
+
+    <div class="push"></div>
+</div>
+
+<script src="~/js/SideMenu.js"></script>
+
+<script>
+    $(document).ready(link4);
+</script>
+
+<script src="~/js/TeachersDatatable.js"></script>

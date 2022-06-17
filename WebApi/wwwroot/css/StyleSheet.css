@@ -1,0 +1,289 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    overflow: hidden;
+    overflow-y: auto;
+    height: 100%;
+    margin: 0;
+    min-height: calc(100vh - 80px - 30px);
+}
+#homePage h1 {
+    font-size: xxx-large;
+    color: black;
+    position: absolute;
+    top: 198px;
+    left: 200px;
+    font-family: Tahoma, sans-serif;
+    font-weight:500;
+}
+#menuBtn {
+    font-size: 35px;
+    cursor: pointer;
+    position: relative;
+    top: 20px;
+    left: 3%;
+    width: 33px;
+}
+#menuBtn:hover {
+    color: #d13838;
+}
+.sidemenu {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 0px;
+    background-color: whitesmoke;
+    z-index: 1;
+    padding-top: 100px;
+    overflow-x: hidden;
+}
+.sidemenu a {
+    padding: 8px 8px 8px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    display: block;
+}
+.sidemenu a:hover {
+    color: #d13838;
+}
+.sidemenu .closeBtn {
+    position: absolute;
+    top: 0px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 32px;
+}
+#header {
+    height: 90px;
+    background-color: whitesmoke;
+}
+#header #schoolLogo {
+    height: 120px;
+    position: relative;
+    left: 7%;
+    bottom: 18px;
+}
+#header_signIn {
+    height: 90px;
+    background-color: whitesmoke;
+}
+#header_signIn #schoolLogo {
+    height: 120px;
+    position: relative;
+    left: 7%;
+    bottom: 69px;
+}
+#signInBtn {
+    float: right;
+    position: relative;
+    bottom: -25px;
+    right: 5%;
+}
+#signOutBtn {
+    float: right;
+    position: relative;
+    bottom: 25px;
+    right: 5%;
+}
+#homePage {
+    min-height: 100%;
+    position: relative;
+}
+.push{
+    height: 50px;
+}
+footer {
+    position: relative;
+    bottom: 0;  
+    width: 100%;
+    background-color: gray;
+    height: 30px;
+}
+footer p{
+    color: white;
+    text-align: center;
+}
+#coursesPage {
+    margin: 2% 2% 2% 2%;
+    min-height: 100%;
+}
+#coursesPage a {
+    color: #d13838;
+    text-decoration: none;
+}
+#createCrsPage {
+    margin: 2% 10% 2% 10%;
+}
+#createCrsPage a {
+    color: #d13838;
+    text-decoration: none;
+}
+#editCrsPage {
+    margin: 2% 10% 2% 10%;
+}
+#editCrsPage a {
+    color: #d13838;
+    text-decoration: none;
+}
+#studentsPage {
+    margin: 2% 2% 2% 2%;
+    min-height: 100%;
+}
+#studentsPage a {
+    color: #d13838;
+    text-decoration: none;
+}
+#createStuPage {
+    margin: 2% 10% 2% 10%;
+}
+#createStuPage a {
+    color: #d13838;
+    text-decoration: none;
+}
+#editStuPage {
+    margin: 2% 10% 2% 10%;
+}
+#editStuPage a {
+    color: #d13838;
+    text-decoration: none;
+}
+#teachersPage {
+    margin: 2% 2% 2% 2%;
+    min-height: 100%;
+}
+#teachersPage a {
+    color: #d13838;
+    text-decoration: none;
+}
+#createTchPage {
+    margin: 2% 10% 2% 10%;
+}
+#createTchPage a {
+    color: #d13838;
+    text-decoration: none;
+}
+#editTchPage {
+    margin: 2% 10% 2% 10%;
+}
+#editTchPage a {
+    color: #d13838;
+    text-decoration: none;
+}
+#homePage #schoolBusImg {
+    width: 100%;
+    height: 487px;
+    position: relative;
+    filter: opacity(70%);
+}
+#startBtn {
+    position: absolute;
+    top: 275px;
+    z-index: 2;
+    left: 47%;
+}
+#homePage #coursesSection {
+    background-color: #fbeded;
+    height: 250px;
+    position: relative;
+}
+#homePage #coursesImg {
+    float: right;
+    width: 14%;
+    position: relative;
+    right: 15%;
+    bottom: 14%;
+}
+#homePage #coursesParg {
+    color: gray;
+    font-family: sans-serif;
+    font-size: larger;
+    position: relative;
+    top: 30%;
+    right: 6%;
+    text-align: center;
+}
+#homePage #studentsSection {
+    background-color: #fdf4f4;
+    height: 250px;
+    position: relative;
+}
+#homePage #studentsImg {
+    float: left;
+    width: 14%;
+    position: relative;
+    left: 18%;
+    bottom: 15%;
+}
+#homePage #studentsPrag {
+    color: gray;
+    font-family: sans-serif;
+    font-size: larger;
+    position: relative;
+    left: 15%;
+    top: 25%;
+    text-align: center;
+}
+#homePage #teacherSection {
+    background-color: #fefbfb;
+    height: 250px;
+    position: relative;
+}
+#homePage #teachersImg {
+    float: right;
+    width: 16%;
+    position: relative;
+    right: 14%;
+    bottom: 17%;
+}
+#homePage #teachersPrag {
+    color: gray;
+    font-family: sans-serif;
+    font-size: larger;
+    position: relative;
+    top: 30%;
+    right: 11%;
+    text-align: center;
+}
+#goToCoursesBtn {
+    position: relative;
+    left: 40%;
+    top: 33%;
+}
+#goToStudentsBtn {
+    position: relative;
+    left: 39%;
+    top: 29%;
+}
+#goToTeacherssBtn {
+    position: relative;
+    top: 31%;
+    left: 42%;
+}
+.btn-primary {
+    border-color: #d13838;
+    background-color: #d13838;
+}
+.btn-primary:hover {
+    border-color: #d13838;
+    background-color: #d13838;
+}
+header .btn-outline-primary {
+    color: #d13838;
+    border-color: #d13838;
+}
+header .btn-outline-primary:hover {
+    background-color: #d13838;
+    border-color: #d13838;
+}
+.btn-primary:active, .btn-primary:focus {
+    box-shadow: 0 0 0 3px #edafaf !important;
+}
+header .btn-outline-primary:active, header .btn-outline-primary:focus {
+    box-shadow: 0 0 0 3px #edafaf !important;
+}

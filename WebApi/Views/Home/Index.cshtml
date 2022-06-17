@@ -1,0 +1,51 @@
+﻿
+
+@{
+    ViewData["Title"] = "Home";
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_SignInLayout.cshtml";
+    }
+    @if (!User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+
+<div id="homePage">
+
+    <img src="~/images/school.jpg" alt="school bus in front of the school" id="schoolBusImg" />
+
+    <h1 id="welcome">Welcome to School Management System</h1>
+
+    <a class="btn btn-primary" id="startBtn" href="#coursesSection">Get Started</a>
+
+    <div id="coursesSection">
+        <pre id="coursesParg">Add the courses taught at your school to show them to others,
+edit them, or delete them whenever you want</pre>
+        <a class="btn btn-primary" href="~/Courses/Index" id="goToCoursesBtn">Go to Courses</a>
+        <img src="~/images/courses.png" alt="pencil and ruler on a computer screen" id="coursesImg" />
+    </div>
+
+    <div id="studentsSection">
+        <pre id="studentsPrag">Add new students' records, edit registered students' records,
+or delete them whenever you want</pre>
+        <a class="btn btn-primary" href="~/Students/Index" id="goToStudentsBtn">Go to Students</a>
+        <img src="~/images/students.png" alt="hat above a computer screen" id="studentsImg" />
+    </div>
+
+    <div id="teacherSection">
+        <pre id="teachersPrag">Add new teachers' records, edit registered teachers' records,
+or delete them whenever you want</pre>
+        <a class="btn btn-primary" href="~/Teachers/Index" id="goToTeacherssBtn">Go to Teachers</a>
+        <img src="~/images/teachers.png" alt="documents on a computer screen" id="teachersImg" />
+    </div>
+
+</div>
+
+<script src="~/lib/jquery/jquery.min.js"></script>
+<script src="~/js/SideMenu.js"></script>
+<script>
+    $(document).ready(link1);
+</script>

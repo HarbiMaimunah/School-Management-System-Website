@@ -1,0 +1,72 @@
+﻿
+
+@model IEnumerable<WebApi.Entities.Student>
+
+@{
+    ViewBag.Title = "Students";
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_SignInLayout.cshtml";
+    }
+    @if (!User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+
+<div id="studentsPage">
+
+    <h2>Students</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+    <table id="StudentsTable" width="100%">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BirthDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EnrollmentDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Major)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GPA)
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+    </table>
+
+    <div class="push"></div>
+</div>
+
+<script src="~/js/SideMenu.js"></script>
+
+<script>
+    $(document).ready(link3);
+</script>
+
+<script src="~/js/StudentsDatatable.js"></script>
